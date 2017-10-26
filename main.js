@@ -77,7 +77,8 @@ var check = (index) => {
         if(depositAddr.length === 81) {
           var outputs = [{
             'address': depositAddr,
-            'value': totalBalance
+            'value': totalBalance,
+            'tag': 'CBSNAPSHOTTRANSFER'
           }]
           console.log(`Done, creating final transfer...`);
           iota.api.prepareTransfers(seed, outputs, {
