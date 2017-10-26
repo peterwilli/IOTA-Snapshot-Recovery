@@ -18,7 +18,7 @@ The repository has a snapshot txt file in itself, this snapshot, at the time of 
 
 The tool will then generate many different addresses based on your old seed, and compares locally with the snapshot file. If there is a hit (and assuming no money has been transferred after the snapshot period) the tool will include that address in 1 big transaction, along with the rest of the hits.
 
-All the funds combined from the pre-snapshot addresses will be sent to a signle adress from the new seed, the new seed can now be reused as you would normally, with access to the full balance.
+All the funds combined from the pre-snapshot addresses will be sent to a single address from the new seed, the new seed can now be reused as you would normally, with access to the full balance.
 
 ----
 
