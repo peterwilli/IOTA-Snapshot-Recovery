@@ -99,4 +99,4 @@ var check = (index) => {
   })
 }
 
-check(6)
+check(0)
