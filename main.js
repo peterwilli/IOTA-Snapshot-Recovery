@@ -3,31 +3,23 @@ var fs = require("fs")
 var iota = new IOTA({
   'provider': 'http://node01.iotameetup.nl:14265'
 });
-var seed =  "" // in case the seed is all 9's (GOSH I HOPE NOT)
+var seed = process.argv[2] + "" // in case the seed is all 9's (GOSH I HOPE NOT)
 var status = 'checking'
 var snapshotSep = fs.readFileSync('snapshot_september.txt').toString().split("\n");
 var snapshotOct = fs.readFileSync('snapshot_october.txt').toString().split("\n");
 
-function setSeed(seedHTML){
-  seed = seedHTML;
-  console.log(seed);
-}
-
-function stopButtonPressed(){
- status = 'stop'
-}
-
 if (seed.length !== 81) {
-  document.getElementById("log").innerHTML += "\n Seed is not 81 characters! Please reload the page and try again."
+  console.error("Seed is not 81 characters!")
+  return
 }
 
 
-document.getElementById("log").innerHTML += '\n Checking...'
+console.log('Checking...');
 var addressesWithBalances = []
 
 var totalBalance = 0
 var check = (index) => {
-  document.getElementById("log").innerHTML += '\n Checking for new addresses'
+  console.log('Checking for new addresses');
   const amountToScan = 2
   var f = iota.api.getNewAddress(seed, {
     index,
@@ -60,7 +52,7 @@ var check = (index) => {
         }
 
         var convertedBalance = balance / 1000000
-        document.getElementById("log").innerHTML += `\n Got a hit! ${addr} has a balance of ${convertedBalance} Mi which was found in the snapshot taken on ${snapshotDate}. The reason was ${reason}`
+        console.log(`Got a hit! ${addr} has a balance of ${convertedBalance} Mi which was found in the snapshot taken on ${snapshotDate}. The reason was ${reason}`)
           totalBalance += balance
           addressesWithBalances.push({
             address: addr,
