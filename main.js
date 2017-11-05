@@ -3,22 +3,13 @@ var fs = require("fs")
 var iota = new IOTA({
   'provider': 'http://node01.iotameetup.nl:14265'
 });
-var seed =  "" // in case the seed is all 9's (GOSH I HOPE NOT)
-var status = 'checking'
+var seed =  process.argv[2] + "" // in case the seed is all 9's (GOSH I HOPE NOT)
 var snapshotSep = fs.readFileSync('snapshot_september.txt').toString().split("\n");
 var snapshotOct = fs.readFileSync('snapshot_october.txt').toString().split("\n");
 
-function setSeed(seedHTML){
-  seed = seedHTML;
-  console.log(seed);
-}
-
-function stopButtonPressed(){
- status = 'stop'
-}
 
 if (seed.length !== 81) {
-  document.getElementById("log").innerHTML += "\n Seed is not 81 characters! Please reload the page and try again."
+  console.log("Seed is not 81 characters! Please reload the page and try again.");
 }
 
 
