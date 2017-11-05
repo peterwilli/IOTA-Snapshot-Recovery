@@ -52,7 +52,12 @@ var check = (index) => {
         }
 
         var convertedBalance = balance / 1000000
-        console.log(`Got a hit! ${addr} has a balance of ${convertedBalance} Mi which was found in the snapshot taken on ${snapshotDate}. The reason was ${reason}`)
+        if (reason.match(/AVAILABLE/g) || reason.match(/NONE/g)) {
+          console.log(`Got a hit! ${addr} has a balance of ${convertedBalance} Mi. The balance is currently in the address.`)
+        }
+        else {
+          console.log(`Got a hit! ${addr} has a balance of ${convertedBalance} Mi which was found in the snapshot taken on ${snapshotDate}. The reason was ${reason}`)
+        }
           totalBalance += balance
           addressesWithBalances.push({
             address: addr,

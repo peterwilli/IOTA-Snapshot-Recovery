@@ -1,17 +1,19 @@
 # IOTA Snapshot Recovery Tool
 
-Using this tool you can move all your funds from a seed that has been used pre-snapshot to a new seed, for fixing the zero-balance problem.
+Using this tool you can find where your balances are and choose the appropriate action (reclaim, generate addresses, etc).
 
-The tool is completely secure, you run it on your own PC without anything being sent to the internet (well, except for the final transaction)
+This is adapted from https://github.com/peterwilli/IOTA-Snapshot-Recovery
+
+The tool is completely secure, you run it on your own PC without anything being sent to the internet
 
 ## How to use?
 Run the following commands in Terminal or PowerShell:
 - `git clone https://github.com/rajivshah3/IOTA-Snapshot-Recovery snapshot-recovery`
 - `cd snapshot-recovery`
 - `npm install`
-- `node main.js <old seed>` #Make sure to remove the arrows
-- Sit back and watch as the tool will find balances that are linked to your old seed.
-- When you think you have all your balances, you simply hit the `i`-key and the final transaction is being made.
+- `node main.js <seed>` Make sure to remove the < and >!
+- Sit back and watch as the tool will find balances that are linked to your seed.
+- When you think you have all your balances, simply hit the `i`-key.
 
 ## How it works
 
