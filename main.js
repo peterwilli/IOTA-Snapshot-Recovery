@@ -13,8 +13,21 @@ if (seed.length !== 81) {
   return
 }
 
+const readline = require('readline');
+readline.emitKeypressEvents(process.stdin);
+process.stdin.setRawMode(true);
+process.stdin.on('keypress', (str, key) => {
+  if (key.ctrl && key.name === 'c') {
+    process.exit();
+  } else {
+    if (key.name === 'i') {
+      process.exit();
+    }
+  }
+})
 
-console.log('Checking...');
+
+console.log('Checking your balance...Press i at any time to stop...');
 var addressesWithBalances = []
 
 var totalBalance = 0
