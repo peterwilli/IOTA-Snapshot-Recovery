@@ -12,8 +12,8 @@ Ensure you have the following:
 - NodeJS which you can download from https://nodejs.org
 
 Run the following commands in Terminal or PowerShell:
-- `git clone https://github.com/rajivshah3/IOTA-Snapshot-Recovery snapshot-recovery`
-- `cd snapshot-recovery`
+- `git clone https://github.com/rajivshah3/IOTA-Balance-Finder balance-finder`
+- `cd balance-finder`
 - `npm install`
 - `node main.js <seed>` Make sure to remove the < and >!
 - Sit back and watch as the tool will find balances that are linked to your seed.
