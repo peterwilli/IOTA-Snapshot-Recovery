@@ -9,7 +9,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "iota.lib.js": "^0.4.2",
-    "browserify-fs": "^1.0.0"
+    "iota.lib.js": "^0.4.2"
   }
 }
