@@ -38,18 +38,21 @@ var check = (index) => {
 
       if (hitSep.length > 0 || hitOct.length > 0) {
         var snapshotDate = ""
+        var balance = 0
+        var reason = ""
         if(hitSep.length > 0){
           snapshotDate = "September 22"
-          var balance = parseInt(snapshotSep[snapshotSep.indexOf(hitSep[0])].split(',"balance":')[1])
+          balance = parseInt(snapshotSep[snapshotSep.indexOf(hitSep[0])].split(',"balance":')[1])
+          reason = snapshotSep[snapshotSep.indexOf(hitSep[0])].split(',"category":')[1]
         }
         if(hitOct.length > 0){
           snapshotDate = "October 23"
-          var balance = parseInt(snapshotOct[snapshotOct.indexOf(hitOct[0])].split("; ")[1])
+          balance = parseInt(snapshotOct[snapshotOct.indexOf(hitOct[0])].split("; ")[1])
+          reason = snapshotOct[snapshotOct.indexOf(hitOct[0])].split(`${balance}; `)[1]
         }
 
         var convertedBalance = balance / 1000000
-        console.log(`Got a hit! ${addr} has a balance of ${convertedBalance} which was found in the
-          snapshot taken on ${snapshotDate}. The reason was `)
+        console.log(`Got a hit! ${addr} has a balance of ${convertedBalance} Mi which was found in the snapshot taken on ${snapshotDate}. The reason was ${reason}`)
           totalBalance += balance
           addressesWithBalances.push({
             address: addr,
@@ -60,10 +63,12 @@ var check = (index) => {
           hits++
         }
       }
+      if (status === 'checking') {
+      setTimeout(function() {
+        check(index + amountToScan)
+      }, 100)
     }
-  })
-}
-})
-}
+    })
+  }
 
 check(0)
