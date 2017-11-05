@@ -5,10 +5,11 @@ Using this tool you can move all your funds from a seed that has been used pre-s
 The tool is completely secure, you run it on your own PC without anything being sent to the internet (well, except for the final transaction)
 
 ## How to use?
-
-- Simply clone this repo.
-- Run `npm install` to get the final dependencies.
-- In the directory, run `node main.js <old seed> <new seed>`.
+Run the following commands in Terminal or PowerShell:
+- `git clone https://github.com/rajivshah3/IOTA-Snapshot-Recovery snapshot-recovery`
+- `cd snapshot-recovery`
+- `npm install`
+- `node main.js <old seed>` #Make sure to remove the arrows
 - Sit back and watch as the tool will find balances that are linked to your old seed.
 - When you think you have all your balances, you simply hit the `i`-key and the final transaction is being made.
 
