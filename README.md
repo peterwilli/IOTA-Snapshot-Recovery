@@ -7,6 +7,10 @@ This is adapted from https://github.com/peterwilli/IOTA-Snapshot-Recovery
 The tool is completely secure, you run it on your own PC without anything being sent to the internet
 
 ## How to use?
+Ensure you have the following:
+- Git which you can download from https://git-scm.com/
+- NodeJS which you can download from https://nodejs.org
+
 Run the following commands in Terminal or PowerShell:
 - `git clone https://github.com/rajivshah3/IOTA-Snapshot-Recovery snapshot-recovery`
 - `cd snapshot-recovery`
@@ -14,6 +18,10 @@ Run the following commands in Terminal or PowerShell:
 - `node main.js <seed>` Make sure to remove the < and >!
 - Sit back and watch as the tool will find balances that are linked to your seed.
 - When you think you have all your balances, simply hit the `i`-key.
+
+## What to do next
+- If the tool says `The balance is currently in the address` to all addresses found, use https://github.com/peterwilli/IOTA-Snapshot-Recovery to quickly and easily transfer your balance to a new seed
+- If the tool says `CURL_UNUSED`, `CURL_NOT_TRANSITIONED`, `KEY_REUSE`, or `KEY_REUSE_OCT` you must use the reclaim tool
 
 ## How it works
 
