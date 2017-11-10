@@ -2,6 +2,8 @@
 
 Using this tool you can find where your balances are after a snapshot and choose the appropriate action (reclaim, generate addresses, etc).
 
+###Please note that this tool will not work if you did not transition
+
 This is adapted from https://github.com/peterwilli/IOTA-Snapshot-Recovery
 
 The tool is completely secure, you can run it on your own computer without anything being sent to the internet
